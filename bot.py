@@ -11,11 +11,11 @@ async def on_ready():
     
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f"Pong! {bot.ws.latency:.4f * 1000} ms")
+    await ctx.send(f"Pong! {bot.ws.latency* 1000:.4f} ms")
     
 @bot.command()
 async def say(ctx, *, msg: str):
-    await message.delete()
+    await ctx.message.delete()
     await ctx.send(msg)
     
 bot.run(os.environ.get("TOKEN"))
