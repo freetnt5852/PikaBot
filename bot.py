@@ -11,10 +11,12 @@ async def on_ready():
     
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f"Pong! {bot.ws.latency* 1000:.4f} ms")
+    """Pong Returns websocket latency"""
+    await ctx.send(f"Pong! {bot.ws.latency * 1000:.4f} ms")
     
 @bot.command()
 async def say(ctx, *, msg: str):
+    """Bot repeats what you say"""
     await ctx.message.delete()
     await ctx.send(msg)
     
